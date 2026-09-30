@@ -1,7 +1,7 @@
 :root {
     --primary: #0284c7;
     --primary-hover: #0369a1;
-    --bg: #f1f5f9;
+    --bg: #f8fafc;
     --card: #ffffff;
     --text: #0f172a;
     --text-muted: #64748b;
@@ -26,7 +26,7 @@ body {
 }
 
 .app-wrapper {
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 2.5rem 1.25rem;
 }
@@ -37,8 +37,9 @@ body {
 }
 
 .app-header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--text);
+    font-weight: 700;
 }
 
 .app-header h1 span {
@@ -53,7 +54,7 @@ body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 340px 1fr;
     gap: 1.5rem;
     align-items: start;
 }
@@ -67,13 +68,13 @@ body {
 .glass-panel {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .form-panel h2, .list-panel h2 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-bottom: 1.25rem;
     font-weight: 600;
 }
@@ -81,41 +82,58 @@ body {
 .contact-input-form {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
 }
 
 .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.input-group label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-muted);
+    position: relative;
 }
 
 .input-group input, 
 .input-group select {
-    padding: 0.55rem 0.75rem;
+    width: 100%;
+    padding: 1rem 1rem 0.6rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     background: #ffffff;
     color: var(--text);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
 .input-group input:focus, 
 .input-group select:focus {
-    outline: 2px solid var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.input-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0.45rem;
+    transform: translateY(0);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary);
 }
 
 .btn {
-    padding: 0.65rem 1rem;
-    border-radius: 6px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     margin-top: 0.5rem;
@@ -142,7 +160,7 @@ body {
     color: #0369a1;
     font-size: 0.8rem;
     font-weight: 600;
-    padding: 0.2rem 0.6rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 12px;
 }
 
@@ -165,13 +183,13 @@ body {
 }
 
 .card-avatar {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: var(--primary);
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,20 +198,20 @@ body {
 
 .card-info h3 {
     font-size: 1rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .card-role {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 0.6rem;
 }
 
 .card-detail {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .delete-btn {
@@ -204,7 +222,7 @@ body {
     border: none;
     color: #94a3b8;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: 4px;
 }
 
@@ -214,7 +232,7 @@ body {
 
 .empty-state {
     text-align: center;
-    padding: 2.5rem 1rem;
+    padding: 3rem 1rem;
     color: var(--text-muted);
     border: 1px dashed var(--border);
     border-radius: 8px;
